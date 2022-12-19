@@ -7,5 +7,3 @@ RUN mkdir /workdir
 WORKDIR /workdir
 
 COPY . /workdir/
-
-RUN npx playwright install
