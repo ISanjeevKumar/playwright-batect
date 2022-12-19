@@ -1,0 +1,23 @@
+containers:
+  playwright-container:
+    build_directory: .batect/builder
+    volumes:
+      - local: .
+        container: /workdir
+        options: cached
+      - type: cache
+        name: playwright-cache
+        container: /home/playwright-container/.cache
+    working_directory: /workdir
+tasks:
+  playwright-install:
+    description: Install Playwright
+    run:
+      container: playwright-container
+      command: npx playwright install
+
+  test:
+    description: Run Playwright e2e Tests
+    run:
+      container: playwright-container
+      command: yarn test
