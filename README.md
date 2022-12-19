@@ -1,4 +1,4 @@
-# playwright-batect
+# playwright-batect [![Playwright Tests](https://github.com/ISanjeevKumar/playwright-batect/actions/workflows/playwright.yml/badge.svg)](https://github.com/ISanjeevKumar/playwright-batect/actions/workflows/playwright.yml)
 
 This is a project that uses Batect to run Playwright tests.
 
