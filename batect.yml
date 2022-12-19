@@ -9,6 +9,9 @@ containers:
         name: playwright-cache
         container: /home/playwright-container/.cache
     working_directory: /workdir
+    run_as_current_user:
+      enabled: true
+      home_directory: /home/playwright-container
 tasks:
   playwright-install:
     description: Install Playwright
