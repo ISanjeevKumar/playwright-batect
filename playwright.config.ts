@@ -7,7 +7,7 @@ const config: PlaywrightTestConfig = {
     timeout: 5000,
   },
   workers: 2,
-  reporter: [["html"]],
+  reporter: [["html", { open: "never" }]],
   use: {
     viewport: { width: 1280, height: 720 },
     headless: true,
