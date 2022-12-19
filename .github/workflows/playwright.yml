@@ -13,6 +13,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+    - name: Install browsers
+      run: ./batect playwright-install    
     - name: Install dependencies
       run: ./batect install
     - name: Run Playwright tests
