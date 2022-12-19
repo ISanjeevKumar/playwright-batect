@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.28.0-focal
+FROM mcr.microsoft.com/playwright:v1.29.0-focal
 
 ENV PLAYWRIGHT_BROWSERS_PATH=0
 RUN mkdir /workdir
