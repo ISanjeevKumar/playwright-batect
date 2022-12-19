@@ -13,11 +13,17 @@ containers:
       enabled: true
       home_directory: /home/playwright-container
 tasks:
-  install:
-    description: Install Playwright
+  playwright-install:
+    description: Install Playwright browsers
     run:
       container: playwright-container
       command: npx playwright install
+
+  install:
+    description: Install Playwright browsers
+    run:
+      container: playwright-container
+      command: yarn install
 
   test:
     description: Run Playwright e2e Tests
