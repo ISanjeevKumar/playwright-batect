@@ -8,6 +8,32 @@ This is a project that uses Batect to run Playwright tests.
 - Yarn
 - Docker
 
+## Dockerfile
+
+A Dockerfile is a script that contains a list of commands that the Docker daemon calls while creating an image. Each command in the Dockerfile adds a new layer to the image.
+
+Here is an example of Playwright's Dockerfile:
+
+```Dockerfile
+FROM mcr.microsoft.com/playwright:v1.29.0-focal
+
+RUN mkdir /workdir
+
+WORKDIR /workdir
+
+COPY . /workdir/
+```
+
+Explanation of each command:
+
+- FROM specifies the base image that the Docker image will be built on top of. In this case, the base image is mcr.microsoft.com/playwright:v1.29.0-focal.
+
+- RUN runs a command in a new layer on top of the current image and commits the results. In this case, the command mkdir /workdir creates a new directory called workdir.
+
+- WORKDIR sets the working directory for subsequent RUN, CMD, ENTRYPOINT, COPY and ADD commands. In this case, it sets the working directory to /workdir.
+
+- COPY copies new files or directories from the source and adds them to the filesystem of the container at the specified path. In this case, the . refers to the current directory and /workdir/ is the destination directory in the container. This command copies all files and directories from the current directory to the /workdir/ directory in the container.
+
 ## Setup
 
 1. Clone the repository:
