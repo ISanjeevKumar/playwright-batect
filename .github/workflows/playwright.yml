@@ -7,16 +7,14 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: playwright-batect
-    
+    runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+    - name: list the files
+      run : ls -l
     - name: Install dependencies
       run: ./batect install
     - name: Run Playwright tests
