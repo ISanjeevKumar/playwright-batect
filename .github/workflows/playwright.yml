@@ -13,10 +13,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: list the files
-      run : ls -l
     - name: Install dependencies
-      run: ./batect install
+      run: ./batect playwright-install
     - name: Run Playwright tests
       run: ./batect test
     - uses: actions/upload-artifact@v3
