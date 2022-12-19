@@ -14,9 +14,9 @@ jobs:
       with:
         node-version: 16
     - name: Install dependencies
-      run: batect install
+      run: ./batect install
     - name: Run Playwright tests
-      run: batect test
+      run: ./batect test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
