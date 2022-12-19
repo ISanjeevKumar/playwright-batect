@@ -1,9 +1,9 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
 jobs:
   test:
     timeout-minutes: 60
@@ -14,11 +14,9 @@ jobs:
       with:
         node-version: 16
     - name: Install dependencies
-      run: yarn
-    - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
+      run: batect install
     - name: Run Playwright tests
-      run: yarn playwright test
+      run: batect test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
