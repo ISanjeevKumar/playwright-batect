@@ -13,7 +13,7 @@ containers:
       enabled: true
       home_directory: /home/playwright-container
 tasks:
-  playwright-install:
+  install:
     description: Install Playwright
     run:
       container: playwright-container
